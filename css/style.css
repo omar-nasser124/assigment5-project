@@ -1,0 +1,16 @@
+/******* base ******/
+@import url(base/base.css);
+
+/******* vendor ******/
+@import url(vendor/all.min.css);
+
+/******* pages ******/
+@import url(pages/home.css);
+@import url(pages/about.css);
+@import url(pages/menu.css);
+@import url(pages/Gallary.css);
+@import url(pages/contact.css);
+@import url(pages/cart.css);
+
+/******* base ******/
+@import url();

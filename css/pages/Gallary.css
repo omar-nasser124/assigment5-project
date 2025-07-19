@@ -1,0 +1,51 @@
+/******** Gallary ********/
+
+.first {
+    background-color: #8c8a8628;  
+    padding: 30px 0; 
+    margin:20px 0 ; 
+    
+    }
+    .first .text{
+       display: flex;
+    flex-direction: column;
+    align-items: center;
+        
+    }
+    
+    .text li a{
+        text-decoration: none;
+        color: #000;
+        
+        transition: all 0.5s;
+    }
+    .text li a:hover{
+        
+        color: #ffcd59c1;
+    }
+    
+    
+    
+    .Gallary {
+    
+        padding: 70px 0;
+        text-align: center;
+    }
+    
+    .col .card {
+    height: auto;
+        width: 33.33333%;
+        float: left;
+       overflow: hidden;
+        text-align: center;
+        transition: all 0.5s;
+    }
+    .col .card:hover  {
+        transform: scale(0.9);
+    }
+    
+    
+    .card img{
+        object-fit: cover;
+        height: 300px;
+    }

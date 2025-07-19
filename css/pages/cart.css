@@ -1,0 +1,39 @@
+.product {
+    
+   border-bottom: 1px solid #68686851 ;; 
+  
+   
+  }
+  .cart-icon {
+    color:#c1ab84;
+   cursor: pointer;
+    font-size: 20px;
+ 
+  }
+
+
+
+  .cart-item {
+    border: 1px solid #ddd;
+    padding: 16px;
+    margin: 16px;
+  }
+  .remove-btn {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    margin-top: 8px;
+  }
+
+
+  .shopping-cart{
+    padding: 70px 0;
+  }
+  .shopping-cart h1  {
+    text-align: center;
+  }
+   .shopping-cart p  {
+    text-align: center;
+  }

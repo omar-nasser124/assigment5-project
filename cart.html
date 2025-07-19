@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/vendor/all.min.css">
+
+</head>
+<body>
+
+
+  <header class="header">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="img/restaurant-2-dark.png" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="index.html">home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">about</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="menu.html">menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="Gallary.html">Gallary</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">contact</a>
+                    </li>
+                   
+
+
+                </ul>
+                <div class="social">
+                    <a href="#">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fa fa-shopping-cart"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+</header>
+
+
+
+<div class="shopping-cart">
+
+    <h1>Your Shopping Cart</h1>
+    <div id="cart-items"></div>
+</div>
+
+  <div class="Our-flag-dishes">
+    <a href="menu.html">  <button class="btu">View Full menu</button></a>
+  </div>
+    <script>
+      
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const cartItemsContainer = document.getElementById('cart-items');
+  
+      
+      function renderCart() {
+        cartItemsContainer.innerHTML = ''; 
+        if (cart.length === 0) {
+          cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
+          return;
+        }
+        cart.forEach((item, index) => {
+          const cartItem = document.createElement('div');
+          cartItem.classList.add('cart-item');
+          cartItem.innerHTML = `
+            <h3>${item.name}</h3>
+            
+            <button class="remove-btn" data-index="${index}">Remove</button>
+          `;
+          cartItemsContainer.appendChild(cartItem);
+        });
+  
+        
+        const removeButtons = document.querySelectorAll('.remove-btn');
+        removeButtons.forEach(button => {
+          button.addEventListener('click', function () {
+            const itemIndex = this.getAttribute('data-index');
+            removeItem(itemIndex);
+          });
+        });
+      }
+  
+      
+      function removeItem(index) {
+        cart.splice(index, 1); 
+        localStorage.setItem('cart', JSON.stringify(cart)); 
+        renderCart(); 
+      }
+  
+      
+      renderCart();
+      </script>
+</body>
+</html>
