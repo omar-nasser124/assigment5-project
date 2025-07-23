@@ -309,6 +309,23 @@
     padding: 30px;
 
 }
+.Reviewers .item img {
+
+     animation-name: moveRightLeft;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+
+}
+ @keyframes moveRightLeft {
+    0%{
+        left: 10px;
+    }
+    100%{
+        left: -20px;
+    }
+}
 
 .Reviewers .item h2 {
     font-family: Alegreya;
@@ -408,7 +425,7 @@
 }
 .Our-flag-dishes .card img:hover {
 
-   transform: scale(0.8);
+   transform: scale(0.9);
 }
 
 .Our-flag-dishes .head h2 {
